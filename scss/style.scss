@@ -1,0 +1,2191 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.header {
+  padding: 40px 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+  }
+  &__list-item + .menu__list-item {
+    padding-left: 35px;
+  }
+  &__list-link {
+    color: $title;
+    padding-bottom: 0 2px 1px;
+    transition: all 0.3s;
+    @extend %roboto-400;
+    &:hover {
+      color: $accent;
+      border-bottom: 1px solid $accent;
+      @extend %roboto-700;
+    }
+  }
+  &__list-link--active {
+    color: $accent;
+    border-bottom: 1px solid $accent;
+    @extend %roboto-700;
+  }
+}
+
+.user-nav {
+  display: flex;
+  &__link {
+    position: relative;
+  }
+  &__link + .user-nav__link {
+    padding-left: 25px;
+  }
+  &__num {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent;
+    top: -9px;
+    right: -14px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: $white;
+  }
+}
+
+footer {
+  background-color: $bg;
+}
+
+.footer-top {
+  padding: 70px 0 40px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  &__contact {
+    width: 250px;
+    margin-right: 50px;
+  }
+  &__nav {
+    width: 170px;
+    margin-right: 30px;
+  }
+  &__item-form {
+    max-width: 470px;
+  }
+  &__logo {
+    margin-bottom: 33px;
+    display: block;
+  }
+  &__adress,
+  &__email,
+  &__phone {
+    display: block;
+    margin-bottom: 14px;
+  }
+  &__social-list {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  &__social-item + .footer-top__social-item {
+    padding-left: 18px;
+  }
+  &__social-link {
+    transition: all 0.3s;
+    path {
+      fill: $default;
+    }
+    &:hover {
+      path {
+        fill: $accent;
+      }
+    }
+  }
+  &__title {
+    color: $title;
+    @extend %roboto-400;
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+  &__link {
+    margin-bottom: 10px;
+    display: block;
+  }
+  &__text {
+    margin-bottom: 25px;
+  }
+  &__form-input {
+    background-color: #fff;
+    max-width: 320px;
+    width: 100%;
+    border: none;
+    padding: 12px 10px 12px 15px;
+    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+    &::placeholder {
+      color: $default;
+      font-size: 16px;
+    }
+  }
+  &__form-btn {
+    @extend %btn;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.footer-bottom {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  &__accept-img {
+    display: inline;
+    margin-left: 25px;
+    vertical-align: middle;
+  }
+}
+
+.top {
+  &__container {
+    max-width: 1700px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 120px 0 130px;
+    text-align: center;
+  }
+}
+
+.top-slider {
+  background-image: url("../images/decor/top-slide-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $bg;
+  padding: 65px 0 45px;
+  &__container {
+    max-width: 1560px;
+  }
+  &__content {
+    padding-left: 175px;
+  }
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+  &__title {
+    max-width: 670px;
+    font-size: 58px;
+    line-height: 68px;
+    color: $title;
+    @extend %roboto-700;
+    margin-bottom: 35px;
+  }
+  &__text {
+    max-width: 470px;
+    margin-bottom: 55px;
+  }
+  &__link {
+    @extend %btn;
+    padding: 14px 36px;
+  }
+  &__img {
+    width: 640px;
+    height: 610px;
+    object-fit: fill;
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    li {
+      padding: 0 5px;
+      button {
+        padding: 0;
+        font-size: 0;
+        background-color: transparent;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        position: relative;
+        cursor: pointer;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $default;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &.slick-active {
+        button {
+          border-color: $accent;
+          cursor: pointer;
+          &::before {
+            background-color: $accent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.categories-info {
+  padding: 120px 0;
+  background-image: url("../images/decor/categories-left-bg.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+
+  &__inner {
+    background-image: url("../images/decor/categories-right-bg.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 110px;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+  }
+  &::before {
+    background-image: url(../images/decor/info-before-bg.svg);
+    top: -40px;
+    left: -45px;
+    width: 120px;
+    height: 121px;
+  }
+  &::after {
+    background-image: url(../images/decor/info-after-bg.svg);
+    bottom: -23px;
+    right: -23px;
+    width: 65px;
+    height: 52px;
+  }
+
+  &__item {
+    background-color: #fff;
+    padding: 60px 30px;
+    width: 370px;
+    box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+  }
+  &__item-title {
+    margin: 35px 0 10px;
+    font-size: 22px;
+    color: $title;
+    @extend %roboto-400;
+  }
+}
+
+.categories {
+  &__items {
+    display: grid;
+    min-height: 635px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+  }
+  &__item {
+    padding-top: 35px;
+    padding-left: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &:nth-child(1) {
+      grid-row: span 2;
+      .categories__item-subtitle,
+      .categories__link:hover {
+        color: #5800e4;
+      }
+    }
+    &:nth-child(2) {
+      grid-column: span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .categories__item-subtitle,
+      .categories__link:hover {
+        color: $accent;
+      }
+    }
+    &:nth-child(3) {
+      .categories__item-subtitle,
+      .categories__link:hover {
+        color: #ffb534;
+      }
+    }
+    &:nth-child(4) {
+      .categories__item-subtitle,
+      .categories__link:hover {
+        color: #34c3ff;
+      }
+    }
+  }
+  &__item-subtitle {
+    margin-bottom: 5px;
+  }
+  &__item-title {
+    font-size: 22px;
+    color: $title;
+    margin-bottom: 16px;
+  }
+  &__link {
+    text-transform: uppercase;
+    color: $title;
+    @extend %roboto-400;
+    transition: all 0.3s;
+  }
+}
+
+.video-fashion {
+  background-color: $bg;
+  background-image: url("../images/decor/patern.svg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding: 125px 0;
+  &__inner {
+    display: flex;
+  }
+  &__popup {
+    margin-right: 65px;
+    max-width: 535px;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  &__content {
+    max-width: 570px;
+  }
+  &__subtitle {
+    padding-top: 75px;
+    font-size: 22px;
+    color: $accent;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  &__title {
+    text-align: left;
+  }
+  &__text {
+    margin-bottom: 55px;
+  }
+  &__link {
+    @extend %btn;
+  }
+}
+
+.product {
+  text-align: center;
+  padding: 105px 0 120px;
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template: 45px 30px;
+  }
+  &__link {
+    margin-top: 55px;
+    text-transform: uppercase;
+    color: $title;
+    display: inline-block;
+    border: 1px solid $accent;
+    padding: 14px 27px;
+  }
+}
+
+.product-item {
+  max-width: 370px;
+  text-align: center;
+  margin-bottom: 25px;
+
+  // &. insemna daca la acest element o sa fie ambele clase atuci este de 100%
+  &.product-item--list {
+    min-width: 100%;
+    // am adaugat ca textul de jos sa se mute in rind cu imaginea
+    display: flex;
+    // in pozitia list , punem textul pe stinga
+    text-align: left;
+    &:hover {
+      .product-item__link-box {
+        transform: translateY(-280%);
+      }
+    }
+    // modificam imaginile cu dimensiune daca selectam list button
+    .product-item__img-box {
+      position: relative;
+      height: 267px;
+      min-width: 200px;
+      // facem ca imagina de jos sa fie la inaltime
+      margin-bottom: 25px;
+      // adaugam la imagine inaltime deoarece nu este corecta
+      img {
+        height: 267px;
+      }
+    }
+    // modificam culoare din interior
+    .product-item__link-box {
+      background-color: transparent;
+      // latime automata
+      width: 115px;
+      // umbra o scoatem
+      box-shadow: none;
+      // jos automat sa fie la mijloc
+      bottom: auto;
+      // adaugam cercuri la elemente
+      .product-item__link {
+        //  dimenisiunea la elementer
+        width: 50px;
+        height: 50px;
+        // culoarea de fundal
+        background-color: #fff;
+        // sa fie rotunde
+        border-radius: 50%;
+        // in interior sa fie flex si aranta ja mijloc cit ele atit si content
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      // il punem la urma ca elementul din mijloc sa dispara , cosul
+      .product-item__link--line {
+        display: none;
+      }
+    }
+    // daca este apasat buttonul list atunci adapare wraper box , text si butonul
+    .product-item__content-box {
+      display: block;
+    }
+
+    .product-item__text {
+      margin-bottom: 25px;
+    }
+    // elementul box il facem flex , putem ca textul sa fie din rind nou
+    .product-item__box {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 15px;
+    }
+
+    .product-item__btn {
+      color: #fff;
+      padding: 11px 40px;
+      background-color: $title;
+      border: none;
+      &:hover {
+        background-color: $accent;
+        box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+        cursor: pointer;
+      }
+    }
+
+    // facem la titlu sa fie primul , ordina -1 si sa ocupe tot spatiul
+    .product-item__title {
+      order: -1;
+      width: 100%;
+      // resetam in pozitia list
+      padding: 0;
+      // distanta de sus 10px
+      margin-bottom: 10px;
+    }
+    // pretul il mutam cu locul in fata
+    .product-item__price {
+      order: -1;
+      margin-left: -12px;
+    }
+
+    // stelele le pun mai aproape
+    .star {
+      margin-left: 23px;
+      margin-top: 15px;
+    }
+
+    .product-item__wrapper-box {
+      padding: 30px 40px;
+      border: 1px solid #ececec;
+      border-left: none;
+    }
+  }
+  // daca nu este selectat , in pozitia grid nu apare nimic.
+  &__content-box {
+    display: none;
+  }
+
+  &__img-box {
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+  }
+  &__link-box {
+    transition: all 0.3s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    background-color: #fff;
+    width: 220px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 22px;
+    box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateY(300%);
+  }
+
+  &__link--line:before,
+  &__link--line::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 1px;
+    height: 30px;
+    background-color: #ececec;
+    top: 10px;
+  }
+
+  &__link--line:before {
+    left: 70px;
+  }
+  &__link--line::after {
+    right: 70px;
+  }
+
+  &__link {
+    display: inherit;
+    path {
+      transition: all 0.3s;
+    }
+  }
+
+  &__link:hover {
+    path {
+      fill: $accent;
+    }
+  }
+
+  &__images {
+    object-fit: cover;
+  }
+
+  &:hover {
+    .product-item__link-box {
+      transform: translateY(0);
+    }
+  }
+  &__title {
+    color: $title;
+    padding: 15px 0 20px;
+    font-size: 22px;
+  }
+  &__price {
+    display: flex;
+    justify-content: center;
+    @extend %roboto-400;
+  }
+  &__price-new {
+    padding: 0 12px;
+    color: $title;
+  }
+  &__price-old {
+    padding: 0 12px;
+    text-decoration: line-through;
+  }
+  &--sale {
+    .product-item__img-box::before {
+      content: "SALE";
+      @extend %btn;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      line-height: 1;
+    }
+  }
+}
+.star {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.promo {
+  background-image: url("../images/promo.bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 150px 0 160px;
+  text-align: center;
+  &__inner {
+    max-width: 570px;
+    width: 100%;
+    margin-left: auto;
+  }
+  &__subtitle {
+    color: $accent;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  &__clock {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+  }
+
+  &__clock-item {
+    background-color: #fff;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 10px 40px 0px• Orgba(187, 187, 187, 0.3);
+    span {
+      font-size: 48px;
+      @extend %roboto-700;
+      margin: 12px 0 7px;
+      color: $title;
+    }
+  }
+
+  &__link {
+    margin-top: 55px;
+    text-transform: uppercase;
+    color: $title;
+    display: inline-block;
+    border: 1px solid $accent;
+    padding: 14px 27px;
+  }
+}
+
+.partners {
+  padding-top: 75px;
+  &__list {
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.blog {
+  padding: 50px 0 60px;
+  background-image: url("../images/blog-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -20px;
+      top: -25px;
+      width: 126px;
+      height: 53px;
+      z-index: -1;
+      background-image: url("../images/decor/blog-decor.png");
+    }
+  }
+  &__item {
+    max-width: 370px;
+    border: 1px solid #ececec;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+      border: none;
+      .blog__item-link {
+        color: $accent;
+        &::after {
+          background-image: url("../images/icon/arrow-accent.svg");
+        }
+      }
+    }
+  }
+  &__item-imglink {
+    img {
+      height: 288px;
+      object-fit: cover;
+    }
+  }
+  &__item-box {
+    padding: 30px 40px;
+  }
+  &__item-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__item-author,
+  &__item-data {
+    padding-left: 30px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__item-author::before {
+    background-image: url("../images/icon/user-grey.png");
+  }
+
+  &__item-data::before {
+    background-image: url("../images/icon/time.png");
+  }
+  &__item-title {
+    color: $title;
+    @extend %roboto-400;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  &__item-link {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  &__item-link::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background-image: url("../images/icon/arrow.svg");
+    right: -14px;
+    top: 7px;
+  }
+}
+
+.modal {
+  padding-top: 100px;
+  max-width: 570px;
+  margin: 0 auto 115px;
+  &__links {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__link {
+    color: #909090;
+    font-size: 22px;
+    @extend %roboto-400;
+    text-transform: uppercase;
+    margin: 0 30px;
+  }
+  &__link--active {
+    color: $accent;
+  }
+  &__label {
+    margin-bottom: 30px;
+    display: block;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: $bg;
+    margin-top: 4px;
+    height: 60px;
+    padding: 0 15px;
+  }
+  &__btn {
+    display: block;
+    background-color: $title;
+    text-transform: uppercase;
+    color: #fff;
+    @extend %roboto-400;
+    padding: 14px 0;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+  }
+  &__error {
+    margin-top: 12px;
+    color: $accent;
+    display: inline-block;
+  }
+  &__text {
+    margin-bottom: 25px;
+  }
+}
+
+.page-404 {
+  padding: 110px 0 120px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content {
+    max-width: 570px;
+    width: 100%;
+  }
+  &__title {
+    color: #28384f;
+    margin-bottom: 40px;
+    @extend %roboto-700;
+    font-size: 48px;
+  }
+  &__text {
+    margin-bottom: 55px;
+    max-width: 470px;
+  }
+  &__link {
+    background-color: $accent;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 14px 35px;
+    @extend %roboto-400;
+    box-shadow: 0px 5px 25px 0px rgba(254, 62, 87, 0.35);
+  }
+}
+
+.shop {
+  padding: 120px 0 105px;
+  &__inner {
+    display: flex;
+  }
+  &__filters {
+    width: 370px;
+    margin-right: 30px;
+  }
+}
+
+.filter {
+  &__item {
+    padding: 35px 30px 40px;
+    border: 1px solid #efefef;
+    margin-bottom: 40px;
+    width: 370px;
+    margin-right: 30px;
+  }
+  &__title {
+    text-transform: uppercase;
+    color: $title;
+    font-size: 22px;
+    @extend %roboto-400;
+    margin-bottom: 25px;
+  }
+}
+
+.filter-search {
+  &__form {
+    display: flex;
+  }
+  &__input {
+    border: none;
+    background-color: rgb(239, 239, 239);
+    width: 260px;
+    height: 50px;
+    padding: 0 5px 0 15px;
+  }
+  &__btn {
+    border: none;
+    background-color: $accent;
+    height: 50px;
+    width: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.filter-price {
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+  }
+  span {
+    color: $default;
+  }
+  &__btn {
+    @extend %btn;
+    border: none;
+    margin-bottom: 30px;
+  }
+}
+
+.irs--flat .irs-line {
+  top: 13px;
+  height: 5px;
+  background-color: #8d8d8d;
+  border-radius: 0;
+}
+
+.irs--flat .irs-handle {
+  top: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: $white;
+  box-shadow: 0px 0px 13px 0px rgba(90, 90, 90, 0.2);
+  cursor: pointer;
+  & > i:first-child {
+    display: none;
+  }
+}
+
+.irs--flat .irs-bar {
+  top: 13px;
+  height: 13px;
+  background-color: $accent;
+}
+.irs--flat .irs-from,
+.irs--flat .irs-to,
+.irs--flat .irs-single {
+  display: none;
+}
+
+.irs--flat .irs-min,
+.irs--flat .irs-max {
+  display: none;
+  top: 110px;
+}
+
+.irs--flat {
+  height: 30px;
+}
+
+// Filter-color
+
+.filter-color {
+  &__text {
+    color: #8d8d8d;
+    font-size: 20px;
+    @extend %roboto-400;
+  }
+  &__label {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #efefef;
+    display: flex;
+    justify-content: space-between;
+    & + .filter-color__label {
+      padding-top: 20px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+  &__input {
+    @extend %checkbox-hidden;
+
+    &:checked + .filter-color__checkbox {
+      background-image: url("../images/icon/check-on1.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  // checkbox fara pozitie checked cum o sa fie reprezentat
+  &__checkbox {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    margin-left: -16px;
+    margin-top: 7px;
+  }
+  // culoare de funt de checkbox sa fie in dependeta de macheta
+  &__checkbox--blue {
+    background-color: $blue;
+  }
+  &__checkbox--red {
+    background-color: $red;
+  }
+  &__checkbox--green {
+    background-color: $green;
+  }
+  &__checkbox--orange {
+    background-color: $orange;
+  }
+  &__checkbox--black {
+    background-color: $black;
+  }
+  &__checkbox--purple {
+    background-color: $purple;
+  }
+}
+
+.filter-size {
+  &__label {
+    padding-left: 35px;
+    margin-bottom: 20px;
+    // deoarece ele sunt in line aranjate , trebuie sa dam display block
+    display: block;
+  }
+  &__input {
+    //ascundem elementul check din spate si in fata ramane doar svg img
+    @extend %checkbox-hidden;
+    //adaugam imaginea svg sa apasare
+    &:checked + .filter-size__checkbox {
+      background-image: url("../images/icon/check-mark.svg");
+      border: none;
+      // ca sa modificam culoare la text  de ling iconita
+      & + .filter-size__text {
+        color: $accent;
+      }
+    }
+  }
+  // checkbox fara pozitie checked cum o sa fie reprezentat
+  &__checkbox {
+    // setam checkbox p/u ca sa putem apasa pe el
+    color: #8d8d8d;
+    // dimensiunle
+    width: 20px;
+    height: 20px;
+    //facem border la cerc si culoare
+    border: 1px solid #8d8d8d;
+    // positionare absoluta fata de forma
+    position: absolute;
+    // il mutam in stanga  de la dunumirele lui
+    margin-left: -35px;
+    //distanta de sus ca sa fie pozitionat in rind cu textul
+    margin-top: 3px;
+    // din patrat in facem cerc
+    border-radius: 50%;
+  }
+  &__text {
+    // adaugam culoarea la span sa denumirea la pozitia selectata.
+    color: #8d8d8d;
+  }
+}
+
+.filter-category {
+  &__label {
+    // distanta intre rinduri
+    margin-bottom: 15px;
+    // sa putem selecta
+    cursor: pointer;
+    // deoarece elementele sau box fixat , ele sutnt in linie si se pun unul peste altul
+    // trebuie sa le facem in block
+    display: block;
+    // ca sa nu fie la ultimul 15xp folosim last child
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__input {
+    //ascundem elementul check din spate si in fata , ramane sa selectam culoare.
+    @extend %checkbox-hidden;
+    // cind este selectat se modifica culoare de fundat in rosie si text in culoarea alba
+    &:checked + .filter-category__checkbox {
+      background-color: $accent;
+      color: #fff;
+    }
+  }
+  &__checkbox {
+    background-color: #efefef;
+    color: $black;
+    // facem ca 2 elementele span sa fie prin parti
+    display: flex;
+    // amplasare lor din 2 margine egal la capat
+    justify-content: space-between;
+    // distana in interior adaugam sa nu fie lipit de margini
+    padding: 16px 20px;
+  }
+}
+
+.filter-popular {
+  &__label {
+    // elementele sa fie in rind block sa nu se acopere unul peste altul
+    display: inline-block;
+    // distanta intre elemente sa fie
+    margin-bottom: 25px;
+    margin-right: 8px;
+    // selectare
+    cursor: pointer;
+    // sa putem apasa in orce margine in element
+    padding: 10 0;
+  }
+  &__input {
+    //ascundem elementul check din spate si in fata , ramane sa selectam culoare.
+    @extend %checkbox-hidden;
+    // cind este selectat se modifica culoare de fundat in rosie si text in culoarea alba
+    &:checked + .filter-popular__checkbox {
+      background-color: $accent;
+      // adaugam border jur imprejur sa fie aceasi culoare
+      border-color: $accent;
+      // culoarea la text sa fie alba
+      color: #fff;
+    }
+  }
+  &__checkbox {
+    // culoare la check box sa fie sura cu border
+    color: #8d8d8d;
+    border: 1px solid #efefef;
+    // elementele din interior sa fie la distanta de la border
+    padding: 10px 15px;
+  }
+}
+
+.shop-content {
+  // facem ca tot spatiu sa fie ocupat
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ececec;
+    .product-item {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__filter {
+    // creeam bordder
+    border: 1px solid #efefef;
+    // distanta  in interior la elemente
+    padding: 20px 25px 20px 30px;
+    // distanta catre urmatorul element
+    margin-bottom: 40px;
+    // elementele din interior sa fie flex
+    display: flex;
+    // elementele din interior sa fie prin parti repartizate
+    justify-content: space-between;
+  }
+  &__filter-buttons {
+    // ca toate elementele sa fie intru rind
+    display: flex;
+    // pe centru in combinatie cu display flex
+    align-items: center;
+    // inaltimea la rind 0.
+    line-height: 0;
+  }
+  &__filter-btn {
+    // sa nu fie distanta intre ele
+    padding: 0;
+    // fara border
+    border: none;
+    // stergem culoarea de fundal
+    background-color: transparent;
+    // distanta de la View sa fie de 15px
+    margin-left: 15px;
+    cursor: pointer;
+    // adaugam clasa active ca default svg sa fie rosier
+    // si modificam culoarea in interior
+    &.shop-content__filter-btn--active {
+      path {
+        fill: $accent;
+      }
+    }
+  }
+}
+
+.shop__content__filter-sort,
+.shop__content__filter-show {
+  margin-left: 30px;
+  height: 32px;
+  padding: 0 30px 0 10px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  // @extend %quiksand-500;
+  color: $default;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+//  Product Page
+
+.product-page {
+  padding: 120px 0 0;
+}
+
+// Product-one
+
+.product-one {
+  &__inner {
+    display: flex;
+  }
+  &__slide {
+    width: 730px;
+    margin-right: 70px;
+  }
+  &__content {
+    width: 370px;
+  }
+  &__title {
+    margin-bottom: 20px;
+    color: $title;
+    font-size: 20px;
+  }
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  &__price {
+    display: flex;
+    font-size: 18px;
+  }
+  &__price-new {
+    color: $title;
+  }
+  &__price-old {
+    padding-left: 15px;
+    text-decoration: line-through;
+  }
+  &__item-star {
+    display: flex;
+    align-items: center;
+    span {
+      padding-left: 8px;
+      color: $title;
+      font-size: 20px;
+    }
+  }
+  &__item-text {
+    margin-bottom: 30px;
+    span {
+      display: block;
+      color: $title;
+      @extend %roboto-400;
+      font-size: 18px;
+    }
+  }
+  &__item-btn {
+    @extend %btn;
+    border: none;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}
+
+// Product-filter
+
+.product-filter {
+  &__color {
+    margin-bottom: 30px;
+    label {
+      margin-right: 10px;
+    }
+  }
+  &__color-input {
+    @extend %radio-hidden;
+    &:checked {
+      & + .product-filter__color-checkbox {
+        border-color: $accent;
+      }
+    }
+  }
+  &__color-checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: 1px solid #ccccce;
+    position: relative;
+    display: inline-block;
+    span {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      top: 3px;
+      left: 3px;
+    }
+  }
+  &__color-title,
+  &__size-title {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: $title;
+    @extend %roboto-400;
+  }
+
+  &__size {
+    margin-bottom: 30px;
+    label {
+      margin-right: 10px;
+      display: inline-block;
+    }
+  }
+  &__size-input {
+    @extend %radio-hidden;
+    &:checked {
+      & + .product-filter__size-checkbox {
+        border-color: $accent;
+      }
+    }
+  }
+  &__size-checkbox {
+    padding: 4px 12px;
+    border: 1px solid #ccccce;
+    cursor: pointer;
+    display: inline-block;
+  }
+}
+
+//jQuery Form Styler change
+
+.jq-number__field {
+  width: 114px;
+  border: 1px solid #8d8d8d;
+  border-bottom-color: #8d8d8d;
+  border-radius: 0;
+  box-shadow: none;
+  transform: translateY(1px);
+  position: relative;
+}
+
+.product-one__item-num {
+  display: inline-block;
+}
+
+.jq-number__field input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  @extend %quicksand-500;
+  color: $title;
+  text-align: center;
+  margin-right: 15px;
+}
+
+.jq-number {
+  padding: 0;
+  position: relative;
+}
+.jq-number__spin {
+  position: absolute;
+  cursor: pointer;
+  width: 13px;
+  height: 13px;
+  top: 50%;
+  left: 80px;
+  transform: translateY(-50%);
+}
+
+.jq-number__spin .minus {
+  left: 20px;
+}
+
+.jq-number__spin .plus {
+  right: 20px;
+}
+
+.jq-number__spin::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  background-color: $title;
+  width: 16px;
+  height: 2px;
+}
+
+.jq-number__spin.minus::after {
+  left: -60px;
+}
+
+.jq-number__spin.plus::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 7px;
+  bottom: 19px;
+  background-color: #29282d;
+  width: 2px;
+  height: 16px;
+}
+
+// reset arrow  input
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Product-info
+
+.product-info {
+  margin-bottom: 30px;
+
+  &__item {
+    margin-bottom: 5px;
+    display: flex;
+  }
+  &__title {
+    min-width: 100px;
+    color: $title;
+  }
+  &__link {
+    path {
+      fill: $default;
+    }
+    &:hover {
+      path {
+        fill: $accent;
+      }
+    }
+    & + .product-info__link {
+      margin-left: 15px;
+    }
+  }
+}
+
+.product-slide {
+  display: flex;
+  .slick-vertical .slick-slide {
+    height: 140px;
+    margin-bottom: 30px;
+  }
+  &__thumb {
+    width: 140px;
+    margin-right: 30px;
+  }
+  &__thumb-item {
+    margin-bottom: 30px;
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+    img {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+    }
+  }
+  &__big {
+    width: 560px;
+    img {
+      width: 560px;
+      height: 650px;
+      object-fit: contain;
+    }
+  }
+}
+
+// Product-tabs
+
+.product-tabs {
+  padding-top: 110px;
+  &__top {
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 40px;
+    @extend %roboto-400;
+    font-size: 22px;
+  }
+  &__top-item {
+    display: inline-block;
+    margin-bottom: 10px;
+    & + .product-tabs__top-item {
+      margin-left: 55px;
+    }
+  }
+  &__top-item--active {
+    color: $title;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -11px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $accent;
+    }
+  }
+  &__content-item {
+    display: none;
+    &.product-tabs__content-item--active {
+      display: block;
+    }
+  }
+}
+
+//Comments  section
+
+.comments {
+  margin-bottom: 40px;
+  display: flex;
+  &__img {
+    margin-right: 30px;
+    min-width: 71px;
+    height: 71px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  &__content-top {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  &__name {
+    color: $title;
+    margin-right: 13px;
+    @extend %roboto-400;
+  }
+  &__day {
+    padding-left: 13px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 0px;
+      width: 1px;
+      height: 14px;
+      background-image: url("../images/icon/line-shape.png");
+    }
+  }
+  &__content-star {
+    margin-right: 0;
+  }
+  &__content-text {
+    margin-bottom: 10px;
+  }
+  &__content-reply {
+    display: inline-block;
+    padding-left: 25px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 15px;
+      height: 13px;
+      background-image: url("../images/icon/reply.svg");
+    }
+  }
+}
+
+//Comments-form
+
+.comments-form {
+  border-bottom: 2px solid #efefef;
+  padding-bottom: 60px;
+  &__title {
+    color: $title;
+    font-size: 22px;
+    @extend %roboto-400;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 50px;
+      height: 1px;
+      background-color: $accent;
+    }
+  }
+  &__rating {
+    margin-bottom: 30px;
+  }
+  &__rating-title {
+    color: $title;
+    margin-right: 60px;
+  }
+  &__label {
+    margin-right: 25px;
+  }
+  &__input {
+    @extend %radio-hidden;
+    &:checked + .comments-form__radio {
+      svg {
+        fill: #ffc35b;
+      }
+    }
+  }
+  &__radio {
+    cursor: pointer;
+  }
+  &__box-input {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text-input {
+    width: 570px;
+    display: inline-block;
+    height: 50px;
+    padding: 0 20px;
+    border: 2px solid #efefef;
+  }
+  &__text--blog-one {
+    width: 360px;
+  }
+  &__textarea {
+    display: block;
+    padding: 15px 20px;
+    border: 2px solid #efefef;
+    width: 100%;
+    height: 225px;
+    margin-bottom: 40px;
+    resize: none;
+  }
+  &__btn {
+    border: none;
+    @extend %btn;
+  }
+}
+
+// // Related
+
+.related {
+  padding: 50px 0 120px;
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    .product-item__img-box {
+      height: auto;
+    }
+    .procuts-item__title {
+      padding: 5px 0;
+    }
+  }
+}
+
+// Blog-page
+
+.blog-box {
+  &__author {
+  }
+  &__data {
+  }
+}
+
+.blog-page {
+  padding: 120px 0 60px;
+  &__item--slider {
+    .blog-page__item-box {
+      margin-top: -8px;
+    }
+  }
+  &__slider {
+    .slick-next,
+    .slick-prev {
+      position: absolute;
+      top: 50%;
+      right: 88%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 45px;
+      height: 45px;
+      background-color: $accent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0px 7px 20px 0px rgba(254, 62, 87, 0.3);
+      path {
+        fill: #fff;
+      }
+    }
+    .slick-disabled {
+      background-color: #fff;
+      box-shadow: 0px 7px 20px 0px rgba(168, 168, 168, 0.3);
+      path {
+        fill: $accent;
+      }
+    }
+    .slick-next {
+      right: 40px;
+    }
+    .slick-prew {
+      left: 40px;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content {
+    width: 770px;
+    margin-right: 30px;
+  }
+  &__asaid {
+    width: 370px;
+  }
+  &__item {
+    margin-bottom: 60px;
+  }
+  &____item--noimage {
+  }
+  &__item-link {
+    display: block;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+  }
+  &__img {
+    max-width: 770px;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+  }
+  &__item-box {
+    border: 1px solid #efefef;
+    border-top: none;
+    padding: 40px;
+  }
+  &__item--noimage {
+    border-top: 1px solid #efefef;
+    box-shadow: 0px 20px 60px 0px Orgba(202, 202, 202, 0.35);
+  }
+
+  &__item-title {
+    color: $title;
+    font-size: 22px;
+    @extend %roboto-700;
+    margin-bottom: 20px;
+  }
+  // daca se afla in blog-page se pun alaturi
+  .blog-box {
+    justify-content: start;
+  }
+
+  .blog-box__author {
+    margin-right: 30px;
+  }
+}
+
+// Person
+
+.person {
+  border: 1px solid #ececec;
+  margin-bottom: 40px;
+  padding: 40px 50px;
+  text-align: center;
+  &__img {
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    margin: 0 auto 35px;
+  }
+  &__name {
+    color: $title;
+    font-size: 18px;
+    @extend %roboto-700;
+    margin-bottom: 13px;
+  }
+  &__position {
+    color: $accent;
+    margin-bottom: 25px;
+  }
+  &__text {
+    margin-bottom: 25px;
+  }
+  &__social-link {
+    margin: 0 8px;
+    path {
+      fill: $default;
+      transition: all 0.3s ease-in;
+    }
+    &:hover {
+      path {
+        fill: $accent;
+      }
+    }
+  }
+}
+
+// Latest-post
+
+.latest-post {
+  border: 1px solid #ececec;
+  margin-bottom: 40px;
+  padding: 35px 30px 40px;
+  &__title {
+    text-transform: uppercase;
+    color: $title;
+    font-size: 22px;
+    @extend %roboto-400;
+    margin-bottom: 35px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    & + .latest-post__item {
+      border-top: 1px solid #ececec;
+      padding-top: 20px;
+    }
+  }
+  &__img-link {
+    display: block;
+    cursor: pointer;
+    margin-right: 25px;
+    width: 90px;
+  }
+  &__img {
+    min-width: 90px;
+    height: 90px;
+    object-fit: cover;
+  }
+  &__subtitle-link {
+    @extend %roboto-400;
+    font-style: 18px;
+    color: $title;
+  }
+  &__date {
+    margin-left: 25px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: -25px;
+      top: 5px;
+      background-image: url(../images/icon/calendar.svg);
+    }
+  }
+}
+
+//Blog-one
+
+.blog-one {
+  &__text {
+    border: 1px solid #ececec;
+    border-top: none;
+    padding: 30px;
+    margin-top: -1px;
+  }
+  &__info {
+    display: flex;
+  }
+  &__info-item {
+    margin-bottom: 25px;
+  }
+  &__info-link {
+    margin-right: 30px;
+    padding-left: 28px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      background-image: url(../images/icon/calendar.svg);
+    }
+  }
+  &__info-link--comment::before {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/icon/comment.svg);
+  }
+  &__info-link--author::before {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/icon/user-active.svg);
+  }
+  &__left-img {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
+  }
+  &__right-img {
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
+  &__text {
+    h4 {
+      color: $title;
+      font-size: 22px;
+      @extend %quicksand-500;
+      margin: 25px 0;
+    }
+    p {
+      margin: 25px 0;
+    }
+    blockquote {
+      background-color: #f6f6f6;
+      border-left: 3px solid $accent;
+      font-size: 22px;
+      @extend %roboto-400;
+      padding: 40px;
+      color: $title;
+      margin: 25px 0;
+    }
+  }
+  &__form-title {
+    margin: 35px 0 25px;
+    text-transform: uppercase;
+    color: $title;
+    font-size: 24px;
+    @extend %roboto-700;
+  }
+  .comments-form {
+    border-bottom: none;
+  }
+  &__box {
+    // distanta de sus de jos la elemente
+    margin: 25px 0 35px;
+    // ca elementele sa fie aranjata intru rind
+    display: flex;
+    // ca elementele sa fie la distanta unul de altul
+    justify-content: space-between;
+  }
+  // la titile adaugam acelasi stiluri
+  &__tags,
+  &__share {
+    // la span facem ca textul sa fi uppercase si coloarea la titlu
+    span {
+      text-transform: uppercase;
+      color: $title;
+      @extend %roboto-700;
+    }
+  }
+  // adaugala la link distanta
+  &__share {
+    a {
+      margin-right: 12px;
+      // deaorece svg este de alta dimensiune si nu pune corect utilizam vertical align p/u alimente in-line
+      vertical-align: middle;
+      // in caz ca ducem cursorul la element el isi schimb culoarea
+      &:hover {
+        // in svg se schimba culoarea
+        path {
+          fill: $accent;
+        }
+      }
+      // in svg  schimbam culoarea de baza
+      path {
+        fill: #727272;
+      }
+    }
+  }
+  &__author {
+    // adaugam distanta in interior la elemente
+    padding-bottom: 40px;
+    // adaugam linia de jos
+    border-bottom: 1px solid #ececec;
+    // adauga distan dupa line
+    margin-bottom: 40px;
+    // facem ca elementele img si text sa fie alaturi
+    display: flex;
+  }
+  &__author-img {
+    // adauga dimensiune la imagine
+    width: 140px;
+    // inaltimea
+    height: 140px;
+    // distana din dreapta sa fie 30px
+    margin-right: 30px;
+    // ca imagina sa nu fie intinsa prea tare dar  pe centru , se taie prin parti.
+    object-fit: cover;
+  }
+  &__author-name {
+    // margin in jos 24px
+    margin-bottom: 24px;
+    // dimensiunea la text
+    font-size: 22px;
+    // sriftul la text
+    @extend %roboto-700;
+    // culoarea la title
+    color: $title;
+  }
+
+  .comments__title {
+    // margin  bottom in jos 24px
+    margin-bottom: 25px;
+    // culoarea la title
+    color: $title;
+    // dimensiunea la text
+    font-size: 24px;
+    // toate elemente sa fie cu litera mare
+    text-transform: uppercase;
+    // sriftul la text
+    @extend %roboto-700;
+  }
+}
+
+.map {
+  margin: 120px 0;
+}
+
+#map {
+  width: 100%;
+  height: 450px;
+}
+
+.contact {
+  // distanta de jos
+  padding-bottom: 120px;
+  &__inner {
+    // elementele sa fie alaturi
+    display: flex;
+  }
+  &__info {
+    // dimensiune la info bloc sa nu easa inafara
+    max-width: 370px;
+    // dinstanta din dreapta 40px
+    margin-right: 40px;
+  }
+  &__info-title {
+    // proprietati p/u title
+    font-size: 48px;
+    line-height: 58px;
+    @extend %roboto-700;
+    color: $title;
+    // distanta in jos 20px
+    margin-bottom: 20px;
+  }
+  &__info-text {
+    // distanta in jos 60px
+    margin-bottom: 60px;
+  }
+  // Facem linkuri si adauga icon sin stinga
+  &__info-item {
+    // culoare la info
+    color: $title;
+    // distanta in sus
+    margin-top: 55px;
+    // sa fie mai indreapta textele
+    padding-left: 80px;
+    //positia relativa fata de text sa fie amplasate icon
+    position: relative;
+    // ca sa apara patrat in care punem icon
+    &::before {
+      // se pune obligatoriu
+      content: "";
+      // positia la icon fata de text , abosluta
+      position: absolute;
+      // amplasare fata de text  deasupra
+      top: -5px;
+      // amplasare fata de text  din stinga
+      left: 0;
+      // dimensiunea la patrat latimea
+      width: 60px;
+      // dimensiunea la patrat inaltimea
+      height: 60px;
+      // adauga umbra la patrat sa fie
+      box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+    }
+    //sa apara incon la in interior la patrat fata de text
+    &::after {
+      // se pune obligatoriu
+      content: "";
+      // positia la icon fata de patrat , abosluta
+      position: absolute;
+      // dimensiunea la patrat latimea
+      width: 20px;
+      // dimensiunea la patrat inaltimea
+      height: 20px;
+      // adaugam imaginea SVG daca e un obiect fix la
+      // care nu se schimba culoarea in caz contrar numai prin html
+      background-image: url(../images/icon/phone.svg);
+      // amplasarea elementului stinga
+      left: 20px;
+      // amplasarea elementului de sus
+      top: 15px;
+    }
+  }
+  // adauga inca cite o clara la fiecare element propietatile
+  //de mai sus le primeste automat modificam citeva
+  &__info-item--location::after {
+    width: 14px;
+    left: 26px;
+    background-image: url(../images/icon/location-1.svg);
+  }
+  &__info-item--email::after {
+    width: 18px;
+    left: 23px;
+    background-image: url(../images/icon/mail-icon.svg);
+  }
+  &__info-phone {
+    color: $title;
+    // facem ca elementele sa fie block sa ocupa tot spatiu
+    display: block;
+  }
+  &__info-mail--link {
+    color: $title;
+  }
+  &__form {
+    width: 100%;
+    padding: 60px 40px;
+    box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+  }
+  &__title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: $title;
+    @extend %roboto-700;
+  }
+  &__form-box {
+    display: flex;
+    justify-content: space-between;
+    input {
+      width: 330px;
+    }
+  }
+  &__form-input {
+    width: 100%;
+    display: block;
+    height: 60px;
+    background-color: $bg;
+    border: none;
+    padding: 0 24px;
+    margin-bottom: 30px;
+  }
+  &__form-textarea {
+    width: 100%;
+    display: block;
+    resize: none;
+    height: 200px;
+    background-color: $bg;
+    border: none;
+    padding: 24px;
+    margin-bottom: 30px;
+  }
+  &__form-btn {
+    @extend %btn;
+    border: none;
+  }
+}
+
+@import "media";
